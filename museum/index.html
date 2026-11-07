@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231b120c%27/%3E%3Ctext x=%2732%27 y=%2741%27 font-family=%27Arial Black%27 font-size=%2724%27 text-anchor=%27middle%27 fill=%27%23f4ead9%27%3EКК%3C/text%3E%3C/svg%3E" />
+  <title>Кофе Крафт — Музей десертов (концепт)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../src/base.css" />
+  <link rel="stylesheet" href="../src/museum.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#top"><span class="logo-mark">КК</span>Кофе Крафт</a>
+    <a class="pill" href="#map">Схема кофеен</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Собственная кондитерская · Рязань</p>
+        <h1 class="h-display hero-title">Музей<br/>десертов</h1>
+        <p class="hero-lead">Экспозиция обновляется каждое утро.<br/>Экспонаты можно съесть.</p>
+      </div>
+      <div class="hero-light" aria-hidden="true">
+        <div class="hero-inner">
+          <p class="eyebrow">Собственная кондитерская · Рязань</p>
+          <div class="h-display hero-title">Музей<br/>десертов</div>
+          <p class="hero-lead">Экспозиция обновляется каждое утро.<br/>Экспонаты можно съесть.</p>
+        </div>
+      </div>
+      <div class="hero-scroll">Пройти в зал ↓</div>
+    </section>
+
+    <section class="gallery" id="gallery">
+      <div class="gallery-sticky">
+        <canvas id="hall"></canvas>
+        <div class="tags" id="tags"></div>
+        <div class="caption" id="caption">
+          <span class="cap-num" id="cap-num">№01</span>
+          <h2 class="cap-name" id="cap-name"></h2>
+          <p class="cap-text" id="cap-text"></p>
+          <span class="cap-price" id="cap-price"></span>
+        </div>
+        <div class="hall-progress"><i id="hall-bar"></i></div>
+        <div class="hall-label">Зал 1 · Кондитерская «Кофе Крафт»</div>
+      </div>
+    </section>
+
+    <section class="intermission">
+      <p class="eyebrow reveal">А к десерту</p>
+      <h2 class="h-display reveal">Авторский кофе,<br/>спешелти какао и&nbsp;шесть рафов</h2>
+      <div class="drinks-cols" id="drinks"></div>
+    </section>
+
+    <section class="map" id="map">
+      <div class="map-head">
+        <p class="eyebrow">Схема кофеен · не в масштабе</p>
+        <h2 class="h-display reveal">6 станций<br/>одной линии</h2>
+      </div>
+      <div class="map-wrap">
+        <svg id="metro" viewBox="0 0 1000 560" role="img" aria-label="Схема шести кофеен"></svg>
+        <aside class="station-card" id="station-card"></aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="../src/museum.js"></script>
+</body>
+</html>

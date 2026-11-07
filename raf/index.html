@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231b120c%27/%3E%3Ctext x=%2732%27 y=%2741%27 font-family=%27Arial Black%27 font-size=%2724%27 text-anchor=%27middle%27 fill=%27%23f4ead9%27%3EКК%3C/text%3E%3C/svg%3E" />
+  <title>Кофе Крафт — Раф-лаборатория (концепт)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../src/base.css" />
+  <link rel="stylesheet" href="../src/raf.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#lab"><span class="logo-mark">КК</span>Кофе Крафт</a>
+    <nav class="nav">
+      <a href="#lab">Конструктор</a>
+      <a href="#quiz">Тест</a>
+      <a href="#season">Сезон</a>
+      <a href="#card">6-й в подарок</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="lab" id="lab">
+      <div class="lab-text">
+        <p class="eyebrow">Раф-лаборатория · Кофе Крафт</p>
+        <h1 class="h-display lab-title">Собери<br/>свой раф</h1>
+        <p class="flavor-text" id="flavor-text"></p>
+
+        <div class="controls">
+          <div class="chips" id="chips" role="radiogroup" aria-label="Вкус"></div>
+          <div class="row">
+            <div class="sizes" id="sizes" role="radiogroup" aria-label="Объём"></div>
+            <div class="price"><span id="price">0</span> ₽</div>
+          </div>
+          <a class="pill solid big" id="order" href="https://kraft-cafe.ru" target="_blank" rel="noopener">Хочу такой →</a>
+        </div>
+      </div>
+      <div class="stage">
+        <canvas id="cup" aria-label="3D-стакан раф"></canvas>
+        <div class="stage-name" id="stage-name"></div>
+        <div class="drag-hint">← покрути стакан →</div>
+      </div>
+    </section>
+
+    <div class="marquee" style="background:var(--espresso);color:var(--cream)">
+      <div class="marquee-track" id="marquee"></div>
+    </div>
+
+    <section class="quiz" id="quiz">
+      <div class="quiz-head">
+        <p class="eyebrow">Тест на 30 секунд</p>
+        <h2 class="h-display reveal">Какой ты раф?</h2>
+      </div>
+      <div class="quiz-box" id="quiz-box"></div>
+    </section>
+
+    <section class="season" id="season">
+      <p class="eyebrow reveal">Сезонное меню · осень</p>
+      <h2 class="h-display reveal">Пока за окном<br/>ноябрь</h2>
+      <div class="season-grid" id="season-grid"></div>
+    </section>
+
+    <section class="loyal" id="card">
+      <div>
+        <p class="eyebrow">Программа лояльности</p>
+        <h2 class="h-display reveal">Каждый шестой<br/>кофе — подарок</h2>
+        <p class="loyal-text">Пять отметок — и шестой стакан за наш счёт. Попробуй: нажимай на стаканы.</p>
+      </div>
+      <div class="stamps" id="stamps"></div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+  <script type="module" src="../src/raf.js"></script>
+</body>
+</html>

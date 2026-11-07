@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 64 64%27%3E%3Ccircle cx=%2732%27 cy=%2732%27 r=%2732%27 fill=%27%231b120c%27/%3E%3Ctext x=%2732%27 y=%2741%27 font-family=%27Arial Black%27 font-size=%2724%27 text-anchor=%27middle%27 fill=%27%23f4ead9%27%3EКК%3C/text%3E%3C/svg%3E" />
+  <title>Кофе Крафт — концепты сайта</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Unbounded:wght@500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/base.css" />
+  <style>
+    html body { background: var(--espresso); color: var(--cream); }
+    .hub { min-height: 100vh; padding: 110px clamp(16px, 5vw, 64px) 120px; }
+    .hub h1 { font-size: clamp(44px, 9vw, 140px); margin: 18px 0 20px; }
+    .hub .lead { max-width: 560px; font-size: 18px; line-height: 1.5; opacity: .8; font-weight: 600; }
+    .variants { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; margin-top: 56px; }
+    .v { position: relative; display: flex; flex-direction: column; justify-content: space-between; min-height: 440px; padding: 28px; border-radius: 30px; text-decoration: none; overflow: hidden; transition: transform .6s var(--ease); isolation: isolate; }
+    .v:hover { transform: translateY(-8px) rotate(-.6deg); }
+    .v::before { content: ''; position: absolute; inset: 0; z-index: -1; transition: transform .8s var(--ease); }
+    .v:hover::before { transform: scale(1.08); }
+    .v1 { color: var(--espresso); } .v1::before { background: radial-gradient(circle at 70% 30%, #ffb27a, transparent 55%), #e3c49b; }
+    .v2 { color: var(--espresso); } .v2::before { background: radial-gradient(circle at 30% 70%, #8db9e6, transparent 55%), radial-gradient(circle at 80% 20%, #ff6a2b, transparent 45%), #f4ead9; }
+    .v3 { color: var(--cream); } .v3::before { background: radial-gradient(circle at 50% 10%, #6b4a33, transparent 60%), #120c08; border: 1.5px solid #3a281b; border-radius: 30px; }
+    .v .num { font-family: var(--display); font-weight: 900; font-size: 110px; line-height: .8; opacity: .9; }
+    .v h2 { font-family: var(--display); font-size: 30px; letter-spacing: -.03em; margin: 0 0 10px; }
+    .v p { margin: 0; font-weight: 600; line-height: 1.45; opacity: .8; }
+    .v .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+    .v .tags span { font-size: 12px; font-weight: 800; padding: 6px 10px; border-radius: 99px; border: 1.5px solid currentColor; }
+    .v .go { position: absolute; right: 24px; top: 24px; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; background: currentColor; transition: transform .5s var(--ease); }
+    .v .go svg { stroke: var(--cream); } .v3 .go svg { stroke: var(--espresso); }
+    .v:hover .go { transform: rotate(-45deg) scale(1.1); }
+    .note { margin-top: 48px; font-size: 14px; opacity: .55; max-width: 640px; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <span class="logo"><span class="logo-mark" style="background:var(--cream);color:var(--espresso)">КК</span>Кофе Крафт</span>
+    <span class="pill">Концепты · ноябрь 2026</span>
+  </header>
+  <main class="hub">
+    <p class="eyebrow" style="color:var(--kraft)">Три направления сайта</p>
+    <h1 class="h-display">Выбери,<br/>как пахнет сайт</h1>
+    <p class="lead">Три концепта для сети «Кофе Крафт». Каждый построен на том, что у вас уже есть: поезд в «Аркаде», шесть рафов и своя кондитерская.</p>
+
+    <section class="variants">
+      <a class="v v1" href="./train/index.html">
+        <span class="go"><svg width="22" height="22" fill="none" stroke-width="2.5"><path d="M4 18L18 4M8 4h10v10"/></svg></span>
+        <span class="num">01</span>
+        <div>
+          <h2>Поезд</h2>
+          <p>Игрушечный паровоз из «Аркады» везёт стакан кофе через весь сайт. Скролл — это поездка: станции «Кофе», «Раф», «Десерты», «6 кофеен».</p>
+          <div class="tags"><span>3D-сцена</span><span>скролл-сюжет</span><span>история бренда</span></div>
+        </div>
+      </a>
+      <a class="v v2" href="./raf/index.html">
+        <span class="go"><svg width="22" height="22" fill="none" stroke-width="2.5"><path d="M4 18L18 4M8 4h10v10"/></svg></span>
+        <span class="num">02</span>
+        <div>
+          <h2>Раф-лаборатория</h2>
+          <p>3D-стакан, который наполняется у тебя на глазах. Собери свой раф, узнай цену, пройди тест «Какой ты раф» и забери результат в сторис.</p>
+          <div class="tags"><span>конструктор</span><span>игра-тест</span><span>вирусность</span></div>
+        </div>
+      </a>
+      <a class="v v3" href="./museum/index.html">
+        <span class="go"><svg width="22" height="22" fill="none" stroke-width="2.5"><path d="M4 18L18 4M8 4h10v10"/></svg></span>
+        <span class="num">03</span>
+        <div>
+          <h2>Музей десертов</h2>
+          <p>Тёмный зал, прожекторы, десерты собственной кондитерской как экспонаты. Ниже — схема шести кофеен, как карта метро, с живым статусом «открыто».</p>
+          <div class="tags"><span>галерея</span><span>живая карта</span><span>премиум</span></div>
+        </div>
+      </a>
+    </section>
+    <p class="note">Это концепт, а не официальный сайт «Кофе Крафт». Цены и часы взяты из открытых источников (2ГИС, агрегаторы) и сверяются перед запуском. Вместо 3D-заглушек в финальной версии будут фото ваших интерьеров и логотип.</p>
+  </main>
+  <div class="grain"></div>
+</body>
+</html>

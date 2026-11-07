@@ -1,0 +1,230 @@
+html body {
+  background: #ead6b8;
+}
+#scene {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  display: block;
+}
+main,
+#footer {
+  position: relative;
+  z-index: 2;
+}
+.stop {
+  min-height: 130vh;
+  display: flex;
+  align-items: center;
+  padding: 0 clamp(16px, 5vw, 72px);
+}
+.stop.right {
+  justify-content: flex-end;
+}
+.stop-hero {
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+}
+.hero-title {
+  font-size: clamp(56px, 12vw, 190px);
+  color: var(--espresso);
+  margin: 18px 0 24px;
+}
+.hero-title .ch {
+  will-change: transform;
+}
+.lead {
+  max-width: 440px;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+.scroll-hint {
+  margin-top: 36px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+.scroll-hint span {
+  width: 26px;
+  height: 42px;
+  border: 2px solid var(--espresso);
+  border-radius: 14px;
+  position: relative;
+}
+.scroll-hint span::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 4px;
+  height: 8px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: var(--espresso);
+  animation: wheel 1.6s infinite;
+}
+@keyframes wheel {
+  to { transform: translateY(14px); opacity: 0; }
+}
+
+.card {
+  width: min(520px, 100%);
+  padding: clamp(22px, 3vw, 40px);
+  border-radius: 28px;
+  background: rgba(255, 250, 242, 0.88);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 30px 80px -30px rgba(27, 18, 12, 0.45);
+}
+.card.dark {
+  background: rgba(27, 18, 12, 0.9);
+  color: var(--cream);
+}
+.card h2 {
+  font-size: clamp(30px, 4vw, 52px);
+  margin: 12px 0 22px;
+}
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 11px 0;
+  border-bottom: 1px dashed rgba(27, 18, 12, 0.25);
+  font-weight: 700;
+}
+.menu-list li span:last-child {
+  white-space: nowrap;
+  color: #9a6a3c;
+}
+.raf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.raf-chip {
+  border-radius: 18px;
+  padding: 14px;
+  color: var(--espresso);
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.2;
+  min-height: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.4s var(--ease);
+}
+.raf-chip:hover {
+  transform: rotate(-2deg) scale(1.04);
+}
+.raf-chip small {
+  font-weight: 700;
+  opacity: 0.7;
+}
+.shops {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 4px;
+}
+.shops li {
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(244, 234, 217, 0.15);
+}
+.shops b {
+  font-size: 16px;
+}
+.shops small {
+  display: block;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+.dot-open {
+  color: #9be37a;
+}
+.dot-closed {
+  color: #ff9a7a;
+}
+.dot-unknown {
+  color: var(--kraft-light);
+}
+
+.ticket {
+  padding: 16px 22px 16px 16px;
+  border-radius: 18px;
+  background: rgba(255, 250, 242, 0.75);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  right: clamp(16px, 4vw, 48px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+  font-size: 12px;
+  font-weight: 700;
+}
+.ticket-line {
+  width: 3px;
+  height: 160px;
+  background: rgba(27, 18, 12, 0.18);
+  border-radius: 3px;
+  position: absolute;
+  right: 10px;
+  top: 46px;
+}
+.ticket-line i {
+  display: block;
+  width: 100%;
+  height: 0%;
+  background: var(--orange);
+  border-radius: 3px;
+}
+.ticket-stops {
+  padding-right: 14px !important;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: right;
+  opacity: 0.75;
+}
+.ticket-stops li.active {
+  color: var(--orange);
+  opacity: 1;
+}
+@media (max-width: 900px) {
+  .ticket {
+    display: none;
+  }
+  .stop,
+  .stop.right {
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 18vh;
+  }
+  .stop-hero {
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 110px;
+  }
+}

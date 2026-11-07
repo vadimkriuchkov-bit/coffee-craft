@@ -1,0 +1,220 @@
+:root {
+  --espresso: #1b120c;
+  --roast: #2e1f15;
+  --kraft: #c89b6d;
+  --kraft-light: #e3c9a4;
+  --cream: #f4ead9;
+  --milk: #fffaf2;
+  --orange: #ff6a2b;
+  --moon: #8db9e6;
+  --display: 'Unbounded', 'Arial Black', sans-serif;
+  --text: 'Manrope', system-ui, sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+body {
+  font-family: var(--text);
+  color: var(--espresso);
+  background: var(--cream);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a {
+  color: inherit;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* зерно крафт-бумаги поверх всего */
+.grain {
+  position: fixed;
+  inset: -50%;
+  pointer-events: none;
+  z-index: 90;
+  opacity: 0.09;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.07 0 0 0 0 0.04 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.2s steps(6) infinite;
+}
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-3%, 2%); }
+  40% { transform: translate(2%, -3%); }
+  60% { transform: translate(-2%, -1%); }
+  80% { transform: translate(3%, 3%); }
+  100% { transform: translate(0, 0); }
+}
+
+/* шапка */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px clamp(16px, 4vw, 48px);
+  pointer-events: none;
+}
+.topbar > * {
+  pointer-events: auto;
+}
+.logo {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--espresso);
+  color: var(--cream);
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  background: transparent;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.pill:hover {
+  transform: translateY(-2px);
+}
+.pill.solid {
+  background: var(--espresso);
+  color: var(--cream);
+  border-color: var(--espresso);
+}
+.pill.orange {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: #fff;
+}
+
+/* плашка «это концепт» — обязательна, пока сайт не согласован с кофейней */
+.concept {
+  position: fixed;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 95;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(27, 18, 12, 0.85);
+  color: var(--cream);
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+  max-width: calc(100vw - 24px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.concept a {
+  color: var(--kraft-light);
+}
+
+.h-display {
+  font-family: var(--display);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  margin: 0;
+}
+.eyebrow {
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* бегущая строка */
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  border-block: 1.5px solid currentColor;
+  padding: 14px 0;
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 48px;
+  animation: marquee 28s linear infinite;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 36px);
+}
+.marquee-track span::after {
+  content: '✺';
+  margin-left: 48px;
+  color: var(--orange);
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+.footer {
+  padding: 80px clamp(16px, 5vw, 64px) 90px;
+  background: var(--espresso);
+  color: var(--cream);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+.footer small {
+  opacity: 0.6;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain,
+  .marquee-track {
+    animation: none;
+  }
+}

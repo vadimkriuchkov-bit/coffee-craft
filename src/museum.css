@@ -1,0 +1,284 @@
+html body {
+  background: #0f0a07;
+  color: var(--cream);
+}
+.topbar,
+.caption,
+.map {
+  color: var(--cream);
+}
+.topbar .logo-mark {
+  background: var(--cream);
+  color: var(--espresso);
+}
+
+/* герой с «фонариком» */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #0f0a07;
+  --mx: 50%;
+  --my: 45%;
+}
+.hero-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 clamp(16px, 6vw, 96px);
+}
+.hero-title {
+  font-size: clamp(64px, 15vw, 250px);
+  margin: 14px 0 22px;
+}
+.hero-lead {
+  font-size: clamp(16px, 1.8vw, 22px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+.hero > .hero-inner {
+  color: #2a1d14;
+}
+.hero-light {
+  position: absolute;
+  inset: 0;
+  color: var(--cream);
+  background: radial-gradient(circle at var(--mx) var(--my), #3a2617 0%, #0f0a07 34%);
+  -webkit-mask-image: radial-gradient(circle at var(--mx) var(--my), #000 0%, #000 12%, transparent 30%);
+  mask-image: radial-gradient(circle at var(--mx) var(--my), #000 0%, #000 12%, transparent 30%);
+}
+.hero-light .hero-title {
+  color: #ffe9cc;
+  text-shadow: 0 0 60px rgba(255, 170, 90, 0.35);
+}
+.hero-light .eyebrow {
+  color: var(--orange);
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: var(--kraft);
+}
+
+/* зал */
+.gallery {
+  position: relative;
+  height: 820vh;
+}
+.gallery-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+#hall {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tags {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.tag {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--kraft-light);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  transition: opacity 0.4s;
+}
+.caption {
+  position: absolute;
+  left: clamp(16px, 5vw, 72px);
+  bottom: 90px;
+  max-width: 420px;
+}
+.cap-num {
+  font-family: var(--display);
+  font-weight: 800;
+  color: var(--orange);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+}
+.cap-name {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 4.4vw, 64px);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+  margin: 8px 0 12px;
+}
+.cap-text {
+  font-weight: 600;
+  font-size: 17px;
+  opacity: 0.8;
+  margin: 0 0 14px;
+}
+.cap-price {
+  display: inline-block;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--kraft);
+  color: var(--kraft-light);
+}
+.hall-progress {
+  position: absolute;
+  right: clamp(16px, 5vw, 72px);
+  bottom: 100px;
+  width: 160px;
+  height: 2px;
+  background: rgba(244, 234, 217, 0.2);
+}
+.hall-progress i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--orange);
+}
+.hall-label {
+  position: absolute;
+  top: 90px;
+  right: clamp(16px, 5vw, 72px);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kraft);
+}
+@media (max-width: 760px) {
+  .caption {
+    bottom: 70px;
+    right: 16px;
+  }
+  .cap-text {
+    font-size: 15px;
+  }
+  .hall-progress {
+    display: none;
+  }
+}
+
+/* антракт */
+.intermission {
+  padding: 140px clamp(16px, 6vw, 96px);
+  background: var(--cream);
+  color: var(--espresso);
+}
+.intermission h2 {
+  font-size: clamp(36px, 6vw, 96px);
+  margin: 16px 0 50px;
+}
+.drinks-cols {
+  columns: 3 260px;
+  column-gap: 48px;
+}
+.drinks-cols div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px dashed rgba(27, 18, 12, 0.3);
+  font-weight: 700;
+  break-inside: avoid;
+}
+.drinks-cols div span:last-child {
+  color: #9a6a3c;
+  white-space: nowrap;
+}
+
+/* схема-метро */
+.map {
+  padding: 120px clamp(16px, 6vw, 96px) 140px;
+  background: #0f0a07;
+}
+.map h2 {
+  font-size: clamp(40px, 7vw, 110px);
+  margin: 16px 0 40px;
+}
+.map-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+#metro {
+  width: 100%;
+  height: auto;
+  background: #170f0a;
+  border-radius: 28px;
+  border: 1px solid #2c1e14;
+}
+#metro .st {
+  cursor: pointer;
+}
+#metro .st circle.ring {
+  transition: r 0.3s var(--ease);
+}
+#metro .st:hover circle.ring,
+#metro .st.active circle.ring {
+  r: 17;
+}
+#metro text {
+  font-family: var(--text);
+  font-weight: 800;
+  fill: var(--cream);
+  font-size: 18px;
+}
+#metro text.sub {
+  font-weight: 600;
+  font-size: 13px;
+  fill: var(--kraft);
+}
+.pulse {
+  animation: pulse 1.8s ease-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+@keyframes pulse {
+  from { transform: scale(1); opacity: 0.7; }
+  to { transform: scale(2.8); opacity: 0; }
+}
+.station-card {
+  background: var(--cream);
+  color: var(--espresso);
+  border-radius: 28px;
+  padding: 30px;
+  min-height: 300px;
+}
+.station-card h3 {
+  font-family: var(--display);
+  font-size: 30px;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  margin: 10px 0 12px;
+}
+.station-card .status {
+  font-weight: 800;
+  margin: 16px 0;
+}
+.station-card .actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+@media (max-width: 900px) {
+  .map-wrap {
+    grid-template-columns: 1fr;
+  }
+}
